@@ -12,7 +12,7 @@ import { Course } from './course.model';
 })
 export class CoursesService {
   model = 'courses';
-  private _courses$ = new BehaviorSubject<Course[]>([emptyCourse]);
+  private _courses$ = new BehaviorSubject<Course[]>([]);
   constructor(
     private http: HttpClient,
     private notificationsService: NotificationsService
