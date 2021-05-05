@@ -1,6 +1,8 @@
-# FsmsNgrx
+# Angular Workspace demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+
+Check the live app: http://www.rupeshtiwari.com/coding-examples-angular-workspace-sample/
 
 ## Development server
 

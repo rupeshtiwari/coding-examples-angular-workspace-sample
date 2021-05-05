@@ -4,13 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "start:client:server": "concurrently \"npm run server\" \"ng serve\"",
+    "build:prod":"ng build --prod --base-href=/coding-examples-angular-workspace-sample/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint --fix",
-    "e2e": "ng e2e",
-    "server": "json-server --watch server/db.json",
-    "predeploy": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
