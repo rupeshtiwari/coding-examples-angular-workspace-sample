@@ -1,0 +1,46 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "core-data": [
+        "dist/core-data/core-data",
+        "dist/core-data"
+      ],
+      "material": [
+        "dist/material/material",
+        "dist/material"
+      ],
+      "ui-toolbar": [
+        "dist/ui-toolbar/ui-toolbar",
+        "dist/ui-toolbar"
+      ],
+      "ui-login": [
+        "dist/ui-login/ui-login",
+        "dist/ui-login"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

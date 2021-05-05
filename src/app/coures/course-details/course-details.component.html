@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="selectedCourse.id; else prompt">Editing {{originalTitle}}</span>
+        <ng-template #prompt>Create Course</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form (submit)="saved.emit(selectedCourse)" #form="ngForm" >
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Title" required [(ngModel)]="selectedCourse.title" type="text" name="title">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Details" required [(ngModel)]="selectedCourse.details" type="text" name="details"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Student" required [(ngModel)]="selectedCourse.studentId" name="studentId">
+          <mat-option *ngFor="let student of students" [value]="student.id">
+            {{student.firstName}} {{student.lastName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <section>
+        <h4>{{selectedCourse.percentComplete}}% Completed</h4>
+        <mat-slider class="full-width" min="0" max="100" thumbLabel
+          [(ngModel)]="selectedCourse.percentComplete" name="percentComplete">
+        </mat-slider>
+      </section>
+
+      <section>
+        <mat-checkbox [(ngModel)]="selectedCourse.approved" name="approved">Approved by Instructor</mat-checkbox>
+      </section>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid">Save</button>
+      <button type="button" mat-button (click)="cancelled.emit(selectedCourse)">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
